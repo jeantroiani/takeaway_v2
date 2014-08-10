@@ -8,8 +8,8 @@ class Order
       @customer = ''
     end
 
-    def update_order_with(*items)
-      items.each{|item| list << item}
+    def update_order_with(item, quantity= 1)
+       (quantity).times{list << item}
     end
 
     def remove_this(*items)

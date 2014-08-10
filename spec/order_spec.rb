@@ -10,10 +10,10 @@ describe 'order' do
    expect(order.list).to eq([:arepa])
  end
 
- it 'can receive many dishes to the order' do
+ it 'can receive more than one duplicate to the order' do
    expect(order.list).to eq([])
-   order.update_order_with(:arepa,:patacon)
-   expect(order.list).to eq([:arepa,:patacon])
+   order.update_order_with(:arepa,2)
+   expect(order.list).to eq([:arepa,:arepa])
  end
 
  it 'can remove an item from the list' do
@@ -24,14 +24,15 @@ describe 'order' do
  end
 
  it 'can remove many items from the list' do
-   order.update_order_with(:arepa,:patacon,:quesillo)
-   expect(order.list).to eq([:arepa,:patacon,:quesillo])
-   order.remove_this(:arepa,:quesillo)
+   order.update_order_with(:arepa)
+   order.update_order_with(:patacon)
+   expect(order.list).to eq([:arepa,:patacon])
+   order.remove_this(:arepa)
    expect(order.list).to eq([:patacon])
  end
 
  it 'has an amount of dishes ordered' do
-   order.update_order_with(:arepa,:patacon,:quesillo)
+   order.update_order_with(:arepa,3)
    expect(order.number_of_items).to eq(3)
  end
 
@@ -39,7 +40,7 @@ describe 'order' do
    arepa    = double("arepa"    ,price: 5)
    patacon  = double("patacon"  ,price: 5)
    quesillo = double("quesillo" ,price: 5)
-   order.update_order_with(arepa, patacon, quesillo)
+   order.update_order_with(arepa, 3)
    expect(order.total).to eq(15)
  end
 

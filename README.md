@@ -1,5 +1,20 @@
-[![Code Climate](https://codeclimate.com/github/jeantroiani/takeaway_v2/badges/gpa.svg)](https://codeclimate.com/github/jeantroiani/takeaway_v2)
-takeaway_v2
+
+<a href="https://codeclimate.com/github/jeantroiani/takeaway_v2"><img src="https://codeclimate.com/github/jeantroiani/takeaway_v2/badges/coverage.svg" /></a>
+
+
+Takeaway
 ===========
 
-Model of a takeaway program.
+Model of a restaurant takeaway application.
+
+
+How to use it
+=============
+git clone https://github.com/jeantroiani/takeaway_v2.git
+
+
+Technologies used
+=============
+- Ruby
+- Heroku
+- Rspec

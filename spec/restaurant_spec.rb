@@ -16,10 +16,4 @@ describe 'restaurant' do
 		expect(restaurant.orders).to eq([order])
 	end
 
-	xit 'can send a message to client when order is ready' do
-	end
-
-
-
-
 end

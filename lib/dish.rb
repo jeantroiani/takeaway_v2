@@ -14,7 +14,7 @@ class Dish
     end
 
     def ingredients
-      @ingredients|| = []
+      @ingredients||= []
     end
 
     def add_ingredient(materials)
